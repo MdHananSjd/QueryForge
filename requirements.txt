@@ -1,0 +1,35 @@
+# --- Core ML / training ---
+torch>=2.4.0
+transformers>=4.46.0
+datasets>=3.0.0
+accelerate>=1.0.0
+peft>=0.13.0
+bitsandbytes>=0.44.0
+trl>=0.11.0
+unsloth @ git+https://github.com/unslothai/unsloth.git
+
+# --- Experiment tracking & data versioning ---
+wandb>=0.18.0
+dvc>=3.55.0
+
+# --- Evaluation (SQL parsing & execution) ---
+sqlglot>=25.0.0        # SQL parsing/validation for EM scoring and safety checks
+sqlparse>=0.5.0
+
+# --- Quantization / serving ---
+vllm>=0.6.0             # comment out if serving via Ollama instead
+# llama-cpp-python>=0.3.0   # uncomment if serving GGUF via llama.cpp instead of vLLM
+auto-gptq>=0.7.0        # only needed if quantizing to GPTQ/AWQ rather than GGUF
+
+# --- API layer ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.9.0
+
+# --- Utilities ---
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+pandas>=2.2.0
+
+# --- Testing ---
+pytest>=8.3.0
